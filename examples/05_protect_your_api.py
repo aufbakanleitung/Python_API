@@ -18,7 +18,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         print("self")
         print(self.headers)
-        if self.headers.get('Authorization') == None:
+        if self.headers.get('Authorization') is None:
             self.do_AUTHHEAD()
 
             response = {
@@ -31,7 +31,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         elif self.headers.get('Authorization') == 'Basic ' + str(key):
             self.send_response(200)
             self.end_headers()
-            self.wfile.write(b'{"message": "Hey mom, looK: I\'m a protected Hello world!"}')
+            self.wfile.write(b'{"message": "Hey mom, look: I\'m a protected Hello world!"}')
 
         else:
             self.do_AUTHHEAD()
