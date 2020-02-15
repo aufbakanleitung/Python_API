@@ -4,14 +4,10 @@ import json
 import argparse
 from requests.auth import HTTPBasicAuth
 
+# -= Assignment =-
+# Access your http server through your protected API
 
 def run(user, password):
-    # server_address = (addr, port)
-    # httpd = server_class(server_address, handler_class)
-
-    # print(f"Starting httpd server on {addr}:{port}")
-    # httpd.serve_forever()
-
     api_url = "http://localhost:8080"
     headers = {"Accept": "application/json"}
 

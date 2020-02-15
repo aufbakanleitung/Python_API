@@ -1,10 +1,11 @@
+import base64
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import BytesIO
 import argparse
 import json
 
 key = "dXNlcjpwYXNzd29yZA=="  # Hash of username "user" and password "password" in base64 encryption (user:password)
-
+# print(base64.standard_b64encode("hi"))
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
@@ -80,3 +81,7 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     run(addr=args.listen, port=args.port)
+
+
+# -= Assignment =-
+# Run this server and try to access it through Postman
