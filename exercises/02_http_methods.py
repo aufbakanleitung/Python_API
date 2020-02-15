@@ -1,3 +1,4 @@
+# For a cool visualization check out: http://petstore.swagger.io/
 import json
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import BytesIO
