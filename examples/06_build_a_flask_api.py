@@ -38,8 +38,9 @@ def route_with_parameter(parameter):
 # Try to navigate to http://127.0.0.1:8081/user/stringID
 @app.route('/user/<int:user_id>')
 def show_user(user_id):
-    # show the user with the given id, the url just resolves if the id is an integer
-    return 'user %d' % user_id
+    # Assignment: create a dict and show the user with the given id, the url only resolves if the id is an integer
+    user_id_dict = {123456: 'Herman'}
+    return f'user {user_id_dict[user_id]}'
 
 
 # Navigate to http://127.0.0.1:8081/path/subpath/123123/subsubsubpath
@@ -49,9 +50,11 @@ def show_subpath(subpath):
     return 'Subpath %s' % escape(subpath)
 
 # TEMPLATES
+# http://127.0.0.1:8081/linkit/
 @app.route('/linkit/')
 @app.route('/linkit/<name>')
 def linkit(name=None):
+    # Assignment: make this function accept and pass a name variable (see template)
     return render_template('linkit.html', name=name)
 
 
@@ -59,6 +62,7 @@ def linkit(name=None):
 # curl -i -H 'x-api-key: linkitbootcamp' http://localhost:8000
 @app.route('/supersecret')
 def supersecret():
+    # Assignment: access the supersecret route through Postman and curl
     headers = request.headers
     auth = headers.get("X-Api-Key")
     if auth == 'linkitbootcamp':
@@ -74,23 +78,14 @@ def supersecret():
 ####  | |____   >  <  |  __/ | |    | (__  | | \__ \ |  __/
 ####  |______| /_/\_\  \___| |_|     \___| |_| |___/  \___|
 ####
-####  No it's time to do something real!!! 
+####  Now it's time to do something real!!!
 ####
 #### 1) Go to the Flask documentation
-#### 2) Try the existing endpoints
+#### 2) Try the existing endpoints, access s
 #### 3) Add some endpoints to your app, try out all the basic http methods (POST, PUT, DELETE)
-
-
-
-
-
-
-
-
-
 
 
 # Set environment variables and run Flask
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 8000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    port = int(os.environ.get('PORT', 8081))
+    app.run(host='127.0.0.1', port=port, debug=True)

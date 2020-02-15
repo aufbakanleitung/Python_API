@@ -22,7 +22,6 @@ print("pretty content:\n" + json.dumps(json.loads(response.text), indent=2))
 print("Characteristics of the Bengal cat:\n")
 cat_dict = json.loads(response.text)
 
-
 print("Name: \t\t\t" + cat_dict[0]["breeds"][0]["name"])
 print("Description: \t" + cat_dict[0]["breeds"][0]["description"])
 print("Temperament: \t" + cat_dict[0]["breeds"][0]["temperament"])
