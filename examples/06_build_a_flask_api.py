@@ -39,8 +39,7 @@ def route_with_parameter(parameter):
 @app.route('/user/<int:user_id>')
 def show_user(user_id):
     # Assignment: create a dict and show the user with the given id, the url only resolves if the id is an integer
-    user_id_dict = {123456: 'Herman'}
-    return f'user {user_id_dict[user_id]}'
+    return f'user'
 
 
 # Navigate to http://127.0.0.1:8081/path/subpath/123123/subsubsubpath
@@ -52,14 +51,12 @@ def show_subpath(subpath):
 # TEMPLATES
 # http://127.0.0.1:8081/linkit/
 @app.route('/linkit/')
-@app.route('/linkit/<name>')
 def linkit(name=None):
     # Assignment: make this function accept and pass a name variable (see template)
-    return render_template('linkit.html', name=name)
+    return render_template('linkit.html')
 
 
 # AUTHENTICATION
-# curl -i -H 'x-api-key: linkitbootcamp' http://localhost:8000
 @app.route('/supersecret')
 def supersecret():
     # Assignment: access the supersecret route through Postman and curl

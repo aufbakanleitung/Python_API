@@ -5,7 +5,6 @@ import argparse
 import json
 
 key = "dXNlcjpwYXNzd29yZA=="  # Hash of username "user" and password "password" in base64 encryption (user:password)
-# print(base64.standard_b64encode("hi"))
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 

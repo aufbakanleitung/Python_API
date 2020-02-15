@@ -63,20 +63,13 @@ get_labels()
 
 
 def get_drafts():
-    # Call the Gmail API
-    results = SERVICE.users().drafts().list(userId='me').execute()
-    drafts = results.get('drafts')
-    print(drafts)
-# get_drafts()
-# get_mail()
+    # Assignment: create get drafts function
+    pass
 
 
 def create_message(sender, to, subject, message_text):
-    message = MIMEText(message_text)
-    message['to'] = to
-    message['from'] = sender
-    message['subject'] = subject
-    return {'raw': base64.urlsafe_b64encode(message.as_string().encode("utf-8"))}
+    # Assignment: create create_message function
+    pass
 
 
 test_message = create_message('hvdveer@gmail.com', 'hvdveer@gmail.com', 'hello', "hii")

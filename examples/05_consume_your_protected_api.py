@@ -8,7 +8,7 @@ from requests.auth import HTTPBasicAuth
 # Access your http server through your protected API
 
 def run(user, password):
-    api_url = "http://localhost:8080"
+    api_url = ""
     headers = {"Accept": "application/json"}
 
     auth = HTTPBasicAuth(username=user, password=password)
